@@ -48,30 +48,18 @@ Visit `/studio` to access the CMS. You will need to log in with your Sanity acco
 
 ## Deployment
 
-### Option 1: Vercel (Recommended)
-1. Push this code to a GitHub repository (optional but easier) OR use Vercel CLI.
-2. If using Vercel CLI:
-   ```bash
-   npm i -g vercel
-   vercel
-   ```
-3. **Important**: Add the Environment Variables (`NEXT_PUBLIC_SANITY_PROJECT_ID`, etc.) in the Vercel Project Settings.
-4. Add your production domain to Sanity CORS origins.
 
-### Option 2: AWS S3 + CloudFront (Static Export)
-Since this project uses `next/image` with a remote source (Sanity), static export requires some configuration or using a custom loader. However, for a dynamic CMS site, Vercel or a Node.js hosting (Render, Netlify) is recommended.
-If you must use static export:
-1. Update `next.config.ts` to include `output: 'export'`.
-2. Note that `next/image` optimization won't work out-of-the-box with `export`. You might need to use `unoptimized: true` in `next.config.ts` images config.
-3. Run `npm run build`.
-4. Upload the `out` directory to S3.
+## ☁️ Cloud Deployment
 
-## Domain Setup
-1. Buy your domain (`subhashguptha.online`).
-2. In your hosting provider (e.g., Vercel), add the domain.
-3. Update your DNS settings (A record or CNAME) as provided by the hosting provider.
+Detailed, step-by-step guides are available for both AWS and Google Cloud:
 
-## Customization
-- **Colors**: Edit `src/app/globals.css` CSS variables.
-- **Icons**: Uses `lucide-react`.
-- **Animations**: Uses `framer-motion`.
+-   [**Deploy to AWS App Runner**](./DEPLOY_AWS.md) (Recommended for ease of use)
+-   [**Deploy to Google Cloud Run**](./DEPLOY_GCP.md) (Recommended for scalability)
+
+Both guides cover setting up continuous deployment from GitHub.
+
+### Environment Variables
+Remember to set these in your cloud provider's dashboard:
+*   `NEXT_PUBLIC_SANITY_PROJECT_ID`
+*   `NEXT_PUBLIC_SANITY_DATASET`
+
