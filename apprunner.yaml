@@ -1,0 +1,17 @@
+version: 1.0
+runtime: nodejs18
+build:
+  commands:
+    build:
+      # We explicitly export the env vars here because App Runner build phase doesn't see the runtime env vars
+      - export NEXT_PUBLIC_SANITY_PROJECT_ID=41nqleq3
+      - export NEXT_PUBLIC_SANITY_DATASET=production
+      - npm install
+      - npm run build
+run:
+  command: npm start
+  network:
+    port: 3000
+    env:
+      NEXT_PUBLIC_SANITY_PROJECT_ID: 41nqleq3
+      NEXT_PUBLIC_SANITY_DATASET: production
