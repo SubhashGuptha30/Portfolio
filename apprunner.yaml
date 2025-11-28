@@ -12,6 +12,6 @@ run:
   command: npm start
   network:
     port: 3000
-    env:
-      NEXT_PUBLIC_SANITY_PROJECT_ID: 41nqleq3
-      NEXT_PUBLIC_SANITY_DATASET: production
+  env:
+    NEXT_PUBLIC_SANITY_PROJECT_ID: 41nqleq3
+    NEXT_PUBLIC_SANITY_DATASET: production
