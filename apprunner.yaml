@@ -13,5 +13,7 @@ run:
   network:
     port: 3000
   env:
-    NEXT_PUBLIC_SANITY_PROJECT_ID: 41nqleq3
-    NEXT_PUBLIC_SANITY_DATASET: production
+    - name: NEXT_PUBLIC_SANITY_PROJECT_ID
+      value: 41nqleq3
+    - name: NEXT_PUBLIC_SANITY_DATASET
+      value: production
