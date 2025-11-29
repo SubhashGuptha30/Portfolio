@@ -9,12 +9,12 @@ import { siteSettingsQuery } from "@/lib/queries";
 const geistSans = localFont({
   src: [
     {
-      path: "../../public/fonts/Geist-Regular.ttf",
+      path: "../public/fonts/Geist-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Geist-Bold.ttf",
+      path: "../public/fonts/Geist-Bold.ttf",
       weight: "700",
       style: "normal",
     },
@@ -23,7 +23,7 @@ const geistSans = localFont({
 });
 
 const geistMono = localFont({
-  src: "../../public/fonts/GeistMono-Regular.ttf",
+  src: "../public/fonts/GeistMono-Regular.ttf",
   variable: "--font-geist-mono",
   weight: "400",
   style: "normal",
@@ -32,12 +32,12 @@ const geistMono = localFont({
 const syne = localFont({
   src: [
     {
-      path: "../../public/fonts/Syne-Regular.ttf",
+      path: "../public/fonts/Syne-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Syne-Bold.ttf",
+      path: "../public/fonts/Syne-Bold.ttf",
       weight: "700",
       style: "normal",
     },
