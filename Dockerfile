@@ -79,4 +79,7 @@ ENV HOST "0.0.0.0"
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV DEPLOY_REFRESH "2025-11-29-15-00"
 
-CMD ["node", "server.js"]
+COPY debug-entrypoint.sh ./
+RUN chmod +x debug-entrypoint.sh
+
+CMD ["./debug-entrypoint.sh"]
