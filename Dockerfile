@@ -75,4 +75,6 @@ ENV PORT 8080
 ENV HOSTNAME "0.0.0.0"
 ENV HOST "0.0.0.0"
 
-CMD ["node", "server.js"]
+COPY debug-server.js ./
+
+CMD ["node", "debug-server.js"]
