@@ -51,6 +51,7 @@ ENV NODE_ENV production
 # ENV NEXT_TELEMETRY_DISABLED 1
 
 # Don't run as root
+RUN apt-get update -y && apt-get install -y openssl ca-certificates
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
