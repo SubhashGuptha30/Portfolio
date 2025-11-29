@@ -3,6 +3,9 @@
 
 This guide provides a detailed, click-by-click walkthrough to deploy your portfolio using **Google Cloud Run**. Cloud Run is a fully managed platform that automatically scales your containerized app.
 
+> [!TIP]
+> **Cost Benefit**: Google Cloud Run **scales to zero**. This means if no one is visiting your site, your container shuts down and you pay **$0**. This makes it the ideal choice for personal portfolios.
+
 ## Prerequisites
 1.  A **Google Cloud Account** (Sign up at [cloud.google.com](https://cloud.google.com/)).
 2.  Your code pushed to **GitHub**.
