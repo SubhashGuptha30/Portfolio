@@ -75,6 +75,7 @@ ENV PORT 8080
 ENV HOSTNAME "0.0.0.0"
 ENV HOST "0.0.0.0"
 
-COPY debug-server.js ./
+# ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED 1
 
-CMD ["node", "debug-server.js"]
+CMD ["node", "server.js"]
