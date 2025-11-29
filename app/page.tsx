@@ -39,36 +39,41 @@ export default function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      // Minimum loading time of 2.5s for the animation
-      const minLoadTime = new Promise(resolve => setTimeout(resolve, 2500))
+      try {
+        // Minimum loading time of 2.5s for the animation
+        const minLoadTime = new Promise(resolve => setTimeout(resolve, 2500))
 
-      const [
-        siteSettings,
-        projects,
-        skills,
-        achievements,
-        certifications,
-        experience
-      ] = await Promise.all([
-        client.fetch(siteSettingsQuery),
-        client.fetch(projectsQuery),
-        client.fetch(skillsQuery),
-        client.fetch(achievementsQuery),
-        client.fetch(certificationsQuery),
-        client.fetch(experiencesQuery)
-      ])
+        const [
+          siteSettings,
+          projects,
+          skills,
+          achievements,
+          certifications,
+          experience
+        ] = await Promise.all([
+          client.fetch(siteSettingsQuery),
+          client.fetch(projectsQuery),
+          client.fetch(skillsQuery),
+          client.fetch(achievementsQuery),
+          client.fetch(certificationsQuery),
+          client.fetch(experiencesQuery)
+        ])
 
-      await minLoadTime
+        await minLoadTime
 
-      setData({
-        siteSettings,
-        projects,
-        skills,
-        achievements,
-        certifications,
-        experience
-      })
-      setLoading(false)
+        setData({
+          siteSettings,
+          projects,
+          skills,
+          achievements,
+          certifications,
+          experience
+        })
+      } catch (error) {
+        console.error("Error fetching data:", error)
+      } finally {
+        setLoading(false)
+      }
     }
 
     fetchData()
