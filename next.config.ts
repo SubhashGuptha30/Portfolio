@@ -47,6 +47,15 @@ const nextConfig = {
           }
         ],
       },
+      {
+        source: '/((?!api|_next/static|_next/image|favicon.ico).*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, s-maxage=0, must-revalidate',
+          },
+        ],
+      },
     ];
   },
   allowedDevOrigins: ["localhost:3000", "192.168.56.1:3000"],
