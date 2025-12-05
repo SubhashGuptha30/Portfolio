@@ -93,7 +93,7 @@ export default function Projects({ projects }: ProjectsProps) {
                     viewport={{ once: false, margin: "-100px" }}
                     className="font-syne text-sm font-bold text-white/40 uppercase tracking-widest mb-4"
                 >
-                    Selected Works
+                    Project Works
                 </motion.h2>
             </div>
 

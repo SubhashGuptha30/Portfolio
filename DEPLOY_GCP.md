@@ -1,110 +1,121 @@
+# 🚀 Deploying to Google Cloud Run (with Firebase Hosting)
 
-# 🚀 Deploying to Google Cloud Run
+This guide provides a detailed, click-by-click walkthrough to deploy your portfolio using **Google Cloud Run** and **Firebase Hosting**.
 
-This guide provides a detailed, click-by-click walkthrough to deploy your portfolio using **Google Cloud Run**. Cloud Run is a fully managed platform that automatically scales your containerized app.
+**Why this setup?**
+1.  **Cloud Run**: Runs your Next.js app. It scales to zero (costs $0 when no one visits).
+2.  **Firebase Hosting**: Acts as a "bridge" to connect your custom domain (`subhashguptha.online`) because Cloud Run domain mapping is limited in the `asia-south1` region. It also provides a global CDN.
 
-> [!TIP]
-> **Cost Benefit**: Google Cloud Run **scales to zero**. This means if no one is visiting your site, your container shuts down and you pay **$0**. This makes it the ideal choice for personal portfolios.
+---
 
 ## Prerequisites
 1.  A **Google Cloud Account** (Sign up at [cloud.google.com](https://cloud.google.com/)).
 2.  Your code pushed to **GitHub**.
+3.  **Node.js** installed on your computer.
 
 ---
 
-## Step 1: Open Google Cloud Console
+## Part 1: Deploy to Cloud Run
+
+### Step 1: Open Google Cloud Console
 1.  Go to the [Google Cloud Console](https://console.cloud.google.com/).
 2.  **Select a Project**:
-    *   Click the dropdown in the top-left header (next to the Google Cloud logo).
-    *   Click **New Project** (top right of the popup).
+    *   Click the dropdown in the top-left header.
+    *   Click **New Project**.
     *   Project Name: `portfolio-website`.
     *   Click **Create**.
-    *   Wait a moment, then select the new project from the notification bell or the dropdown.
 
-## Step 2: Enable Cloud Run
-1.  In the top search bar, type **"Cloud Run"**.
-2.  Click on **Cloud Run** from the results.
-3.  If prompted, click **Enable API**.
+### Step 2: Create Service
+1.  Search for **"Cloud Run"** and open it.
+2.  Click **Create Service**.
+3.  Click **SET UP WITH CLOUD BUILD** (under "Deploy one revision from an existing container image").
 
-## Step 3: Create Service
-1.  Click the **Create Service** button (top of the page).
-2.  **Deploy one revision from an existing container image**:
-    *   Actually, we want to connect GitHub directly.
-    *   Look for the option **"Continuously deploy new revisions from a source repository"**.
-    *   Click **SET UP WITH CLOUD BUILD**.
-
-## Step 4: Connect GitHub (Cloud Build)
+### Step 3: Connect GitHub
 1.  **Repository Provider**: Select **GitHub**.
-2.  **Repository**:
-    *   Click **Manage connected repositories** (if needed) to authorize Google Cloud to access your GitHub.
-    *   Select `SubhashGuptha30/Portfolio`.
-    *   Check the box to agree to terms.
-    *   Click **Next**.
-3.  **Build Configuration**:
-    *   Select **Dockerfile**.
-    *   **Source location**: `/Dockerfile` (should be default).
+2.  **Repository**: Select `SubhashGuptha30/Portfolio`.
+3.  **Build Configuration**: Select **Dockerfile**.
 4.  Click **Save**.
 
-## Step 5: Configure Service Settings
-1.  **Service name**: `portfolio` (default is fine).
-2.  **Region**: Select a region close to you (e.g., `us-central1` or `asia-south1`).
-3.  **Authentication**:
-    *   **IMPORTANT**: Select **Allow unauthenticated invocations**.
-    *   This makes your website public so anyone can visit it.
-4.  **CPU allocation and pricing**:
-    *   Select **CPU is only allocated during request processing**.
+### Step 4: Configure Service
+1.  **Service name**: `portfolio`.
+2.  **Region**: `asia-south1` (Mumbai).
+3.  **Authentication**: Select **Allow unauthenticated invocations** (Public).
+4.  **CPU allocation**: Select **CPU is only allocated during request processing** (Scale to Zero).
 
-## Step 6: Environment Variables & Resources
-1.  Click the arrow to expand **Container, Networking, Security**.
-2.  Click the **Variables & Secrets** tab.
-3.  Click **Add Variable**.
-4.  Add your Sanity variables (from `.env.local`):
-    *   Name: `NEXT_PUBLIC_SANITY_PROJECT_ID` | Value: `your_project_id`
-    *   Name: `NEXT_PUBLIC_SANITY_DATASET`    | Value: `production`
-    *   Name: `NEXT_PUBLIC_SANITY_API_VERSION` | Value: `2024-01-01`
-    *   Name: `HOSTNAME`                       | Value: `0.0.0.0`
-    *   Name: `PORT`                           | Value: `3000`
-5.  **Container tab** (Optional but recommended):
-    *   Scroll up to the **Container** tab.
-    *   **Memory**: Set to `1 GiB` or `2 GiB`.
-    *   **CPU**: `1` is usually enough.
+### Step 5: Environment Variables
+1.  Expand **Container, Networking, Security**.
+2.  Go to **Variables & Secrets** tab.
+3.  Add your Sanity variables:
+    *   `NEXT_PUBLIC_SANITY_PROJECT_ID`: `your_project_id`
+    *   `NEXT_PUBLIC_SANITY_DATASET`: `production`
+    *   `NEXT_PUBLIC_SANITY_API_VERSION`: `2024-01-01`
+    *   `HOSTNAME`: `0.0.0.0`
+    *   `PORT`: `3000`
+4.  Click **Create**.
 
-## Step 7: Create
-1.  Click the **Create** button at the bottom.
+*Wait for the deployment to finish. You will get a URL like `https://portfolio-xyz.asia-south1.run.app`.*
 
 ---
 
-## Step 8: Connect Custom Domain (subhashguptha.online)
-1.  In the Cloud Run dashboard, click **Manage Custom Domains** (top bar).
-2.  Click **Add Mapping**.
-3.  **Select service**: `portfolio`.
-4.  **Select domain**:
-    *   Select **Verify a new domain**.
-    *   Enter `subhashguptha.online`.
-    *   Click **Verify**. This will open Google Webmaster Central.
-    *   **Namecheap Verification**:
-        *   Choose **DNS TXT record** method.
-        *   Copy the TXT record provided by Google.
-        *   Go to **Namecheap** -> **Advanced DNS**.
-        *   Add New Record -> Type: `TXT Record` -> Host: `@` -> Value: (Paste Google's code).
-        *   Wait 5 mins, then click **Verify** in Google.
-5.  Once verified, go back to Cloud Run and finish mapping.
-6.  **Update DNS (Namecheap)**:
-    *   Google will provide you with **A records** and **AAAA records**.
-    *   In Namecheap **Advanced DNS**:
-        *   Delete existing A/CNAME records for `@`.
-        *   Add the **A records** provided by Google (usually 4 of them).
-        *   Add the **AAAA records** (usually 4 of them).
-7.  Wait for propagation (15 mins to 1 hour).
+## Part 2: Connect Custom Domain (Firebase Hosting)
+
+Since `asia-south1` doesn't support direct domain mapping yet, we use Firebase.
+
+### Step 1: Install Firebase CLI
+Open your VS Code terminal and run:
+```bash
+npm install -g firebase-tools
+```
+
+### Step 2: Login
+```bash
+firebase login
+```
+
+### Step 3: Enable Firebase
+1.  Go to the [Firebase Console](https://console.firebase.google.com/).
+2.  Click **Create a project**.
+3.  Select your existing Google Cloud project (`portfolio-website-...`) from the dropdown.
+4.  Click **Continue** -> **Add Firebase**.
+
+### Step 4: Configure & Deploy
+We have already created the config files (`firebase.json` and `.firebaserc`) for you. Just run:
+```bash
+firebase deploy --only hosting
+```
+This will give you a Firebase URL (e.g., `https://portfolio-website-479715.web.app`).
+
+### Step 5: Map Domain
+1.  Go to [Firebase Hosting Console](https://console.firebase.google.com/project/portfolio-website-479715/hosting/sites).
+2.  Click **Add Custom Domain**.
+3.  Enter `subhashguptha.online`.
+4.  **DNS Setup (Namecheap)**:
+    *   Select **Quick Setup**.
+    *   Go to Namecheap -> **Advanced DNS**.
+    *   Add the **TXT Record** provided by Firebase.
+    *   Add the **A Record** provided by Firebase.
+5.  Click **Verify** in Firebase.
 
 ---
 
-## 🎉 What Happens Next?
-1.  You will see a dashboard showing the deployment progress.
-2.  Cloud Build will start building your Docker image from GitHub (this takes 3-5 minutes).
-3.  Once the build is done, Cloud Run will deploy it.
-4.  When you see a **Green Checkmark**, look for the **URL** at the top (e.g., `https://portfolio-xyz-uc.a.run.app`).
-5.  Click it to view your site!
+## Part 3: Critical Final Step (CORS)
+
+If you skip this, your site will load but show no content.
+
+1.  Go to [manage.sanity.io](https://manage.sanity.io).
+2.  Select your project.
+3.  Go to **API** > **CORS Origins**.
+4.  Click **Add CORS Origin**.
+5.  Add your new domain: `https://subhashguptha.online`.
+6.  Check **Allow credentials**.
+7.  Click **Save**.
+
+---
 
 ## 💡 Updating Your Site
-Because we set up "Continuous Deployment", whenever you push changes to GitHub (`git push`), Google Cloud Build will automatically trigger, rebuild your Docker image, and update the live site on Cloud Run.
+*   **Code Changes**: Just `git push` to GitHub. Cloud Run will automatically rebuild and deploy.
+*   **Firebase Config**: You rarely need to touch this unless you change the domain.
+
+## 🔧 Troubleshooting
+*   **Stuck on Loader?** Check the browser console (F12). If you see "CORS error", you forgot **Part 3**.
+*   **Domain not working?** DNS changes can take up to 1 hour. Wait a bit.
