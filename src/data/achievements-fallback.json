@@ -1,0 +1,112 @@
+{
+  "leetcode": {
+    "platform": "leetcode",
+    "lastUpdated": "2026-05-26T12:00:00.000Z",
+    "profileUrl": "https://leetcode.com/u/subhashguptha308",
+    "stats": {
+      "totalSolved": 1,
+      "easySolved": 0,
+      "mediumSolved": 1,
+      "hardSolved": 0,
+      "totalEasy": 880,
+      "totalMedium": 1850,
+      "totalHard": 800,
+      "ranking": 5000001,
+      "acceptanceRate": 100,
+      "totalSubmissions": 2,
+      "contestRating": null,
+      "contestsAttended": 0,
+      "globalRanking": null,
+      "topPercentage": null
+    },
+    "badges": [],
+    "charts": {
+      "difficulty": [
+        { "label": "Easy", "solved": 0, "total": 880, "color": "#00b8a3" },
+        { "label": "Medium", "solved": 1, "total": 1850, "color": "#ffc01e" },
+        { "label": "Hard", "solved": 0, "total": 800, "color": "#ff375f" }
+      ]
+    }
+  },
+  "codechef": {
+    "platform": "codechef",
+    "lastUpdated": "2026-05-26T12:00:00.000Z",
+    "profileUrl": "https://www.codechef.com/users/subhash3008",
+    "stats": {
+      "currentRating": 1000,
+      "highestRating": 1000,
+      "stars": 1,
+      "globalRank": "Inactive",
+      "countryRank": "Inactive",
+      "division": null
+    },
+    "ratingHistory": [],
+    "charts": {
+      "ratingProgress": []
+    }
+  },
+  "hackerrank": {
+    "platform": "hackerrank",
+    "lastUpdated": "2026-05-26T12:00:00.000Z",
+    "profileUrl": "https://www.hackerrank.com/profile/subhashguptha30",
+    "stats": {
+      "name": "Subhash Guptha Gantasala",
+      "level": 5,
+      "country": "India",
+      "createdAt": "2024-02-06T06:24:34.000Z",
+      "followersCount": 0
+    },
+    "badges": [
+      {
+        "name": "C",
+        "stars": 1,
+        "solved": 4,
+        "totalChallenges": 25,
+        "categoryName": "Language Proficiency",
+        "url": "/domains/c"
+      }
+    ],
+    "charts": {
+      "skills": [
+        { "label": "C", "value": 1, "max": 5 }
+      ]
+    }
+  },
+  "googleSkills": {
+    "platform": "google-skills",
+    "lastUpdated": "2026-05-26T12:00:00.000Z",
+    "profileUrl": "https://www.skills.google/public_profiles/ebe79b94-f4fe-401f-a94c-56023709ba11",
+    "stats": {
+      "name": "Subhash Guptha Gantasala",
+      "memberSince": "2025",
+      "league": "Bronze League",
+      "points": 100,
+      "totalBadges": 23
+    },
+    "badges": [
+      { "title": "Skill Up Summer", "date": "May 23, 2026", "imageUrl": "https://cdn.qwiklabs.com/pn28u5yHjwU%2Br5LGxTTF2MNEGBnGHWZ9S5eWiEFAHgs%3D" },
+      { "title": "Arcade Voyage: Data Governance and Firebase Foundations", "date": "May 23, 2026", "imageUrl": "https://cdn.qwiklabs.com/acM7OgvUEOhSeWdlHH%2B5hkF9BHL%2BPI6uToEYrcGt50A%3D" },
+      { "title": "Arcade Base Camp May 2026", "date": "May 16, 2026", "imageUrl": "https://cdn.qwiklabs.com/exXBfYMpTTZHZL4JAIIMbbtPXtLOIJmyCnmxuw4ggto%3D" },
+      { "title": "Arcade Adventure: Modern App Deployment", "date": "May 15, 2026", "imageUrl": "https://cdn.qwiklabs.com/W9saOrXeoBb9OcfBF9ifcv%2FV%2FeqOaQTbZkUmo8wcs38%3D" },
+      { "title": "Arcade Trail: Cloud Security and DevOps Foundations", "date": "May 14, 2026", "imageUrl": "https://cdn.qwiklabs.com/MJ1QYHJE2h%2F5DOzxX3vu2YfwIndoAR4IutTMJzVEevA%3D" },
+      { "title": "Arcade Voyage: Modern Application Development", "date": "Apr 25, 2026", "imageUrl": "https://cdn.qwiklabs.com/%2Bub%2FxM0IG82eclzeCw2ZCQeVZIFWDrDK59Hbkr1Gk9M%3D" },
+      { "title": "Arcade Adventure: GKE Operations and Networking", "date": "Apr 24, 2026", "imageUrl": "https://cdn.qwiklabs.com/Xqt3O07j%2B0EJYTN2%2Bp7QIv114d9RGBcSBlYl0mfyHqM%3D" },
+      { "title": "Arcade Trail: Data Migration", "date": "Apr 23, 2026", "imageUrl": "https://cdn.qwiklabs.com/wSMtWvBhImlr5fZH7LC%2BTdaVBnCMTVnlLkZVHAvzD4g%3D" },
+      { "title": "Arcade Base Camp April 2026", "date": "Apr 22, 2026", "imageUrl": "https://cdn.qwiklabs.com/rLbE%2F%2FxV6XzXOKwVxTQbXKhuz%2Ba%2B7wLmwosJBVIu8zY%3D" },
+      { "title": "Dialogue Design", "date": "Apr 22, 2026", "imageUrl": "https://cdn.qwiklabs.com/yxP%2BhIbvcYcO3fdnphDvLK9DxwuephoEbI%2Bna9OHkGY%3D" },
+      { "title": "Work Meets Play: Metrics in Motion", "date": "Mar 7, 2026", "imageUrl": "https://cdn.qwiklabs.com/m7NpHJriXFqSWW9Gjd%2FcVloP8TaR9KansT35NNCzi6I%3D" },
+      { "title": "Holi-istic Infrastructures", "date": "Mar 4, 2026", "imageUrl": "https://cdn.qwiklabs.com/YL%2FXwmtZYUdONk0F2TOKnEjSPFyHaQASjhNNFM5AZaQ%3D" },
+      { "title": "Google Skills Arcade Certification Zone January 2026", "date": "Jan 27, 2026", "imageUrl": "https://cdn.qwiklabs.com/VTvlfPXpDraf6pIzUZz2IK%2FRjsmKKtqAkEGFkb4QWIU%3D" },
+      { "title": "Work Meets Play: A Cloud That Cares", "date": "Jan 27, 2026", "imageUrl": "https://cdn.qwiklabs.com/vijt%2FHhQuNsHwSZzzAyToCxKpq1fIfGlG3f2a4Hdqmo%3D" },
+      { "title": "Google Skills Arcade Trivia January 2026 Week 4", "date": "Jan 23, 2026", "imageUrl": "https://cdn.qwiklabs.com/cMYTpo1BSL8YRRBUn1QkY8TgL2rehGS6wTCWHnciurM%3D" },
+      { "title": "Google Skills Arcade Trivia January 2026 Week 3", "date": "Jan 22, 2026", "imageUrl": "https://cdn.qwiklabs.com/JyDrLJUtV80PNWj9zonAayaa%2BXS3ANokYL%2FwcLP3U1s%3D" },
+      { "title": "Google Skills Arcade Trivia January 2026 Week 2", "date": "Jan 22, 2026", "imageUrl": "https://cdn.qwiklabs.com/erhiNzYTyTu8DMXe9Qdqw0wjrwVbtTpD9WaRtgoF0tY%3D" },
+      { "title": "Google Skills Arcade Trivia January 2026 Week 1", "date": "Jan 22, 2026", "imageUrl": "https://cdn.qwiklabs.com/OKs5G92MGsypQteta56%2FA%2FOT1MDhKfnvjSd7qJTCDKo%3D" },
+      { "title": "Level 2: Event-Driven Systems", "date": "Jan 22, 2026", "imageUrl": "https://cdn.qwiklabs.com/24PZYrEjWJ83X1Y41w259nTpeBulffMQVVDtukri7g0%3D" },
+      { "title": "Level 1: Compute, Storage and Monitoring", "date": "Jan 21, 2026", "imageUrl": "https://cdn.qwiklabs.com/s2Z%2FNVvCyvqdC7YjLTIWb1hG4x%2BQ7NzrqC7x5g2gXU0%3D" },
+      { "title": "Google Skills Arcade Base Camp January 2026", "date": "Jan 20, 2026", "imageUrl": "https://cdn.qwiklabs.com/OKcbA2pNhCWnn17RacVRb%2BPwqGGyKHQs%2B5DDKpPiyHE%3D" },
+      { "title": "Level 3: Applied Generative AI", "date": "Jan 19, 2026", "imageUrl": "https://cdn.qwiklabs.com/jYebaq0KueqOtV%2Fuo4ZzfGU8wviSChvJf3FFBVd5RSE%3D" },
+      { "title": "Work Life Refresh", "date": "Jan 18, 2026", "imageUrl": "https://cdn.qwiklabs.com/37vwyGD%2FB8DexMzP5NwwoN8z6PxbEFbKkdetz2aEZNw%3D" }
+    ]
+  }
+}
