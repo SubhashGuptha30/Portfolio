@@ -8,9 +8,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 const navLinks = [
     { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
-    { name: 'Work', href: '#projects' },
     { name: 'Skills', href: '#skills' },
+    { name: 'Work', href: '#projects' },
+    { name: 'Achievements', href: '#achievements' },
     { name: 'Experience', href: '#experience' },
+    { name: 'Certifications', href: '#certifications' },
     { name: 'Contact', href: '#contact' },
 ]
 
@@ -76,7 +78,7 @@ export default function Navbar() {
                         transition={{ duration: 0.5 }}
                         className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center"
                     >
-                        <nav className="flex flex-col items-center gap-8">
+                        <nav className="flex flex-col items-center gap-6">
                             {navLinks.map((link, index) => (
                                 <motion.div
                                     key={link.name}
@@ -88,7 +90,7 @@ export default function Navbar() {
                                     <Link
                                         href={link.href}
                                         onClick={() => setIsOpen(false)}
-                                        className="font-syne text-5xl md:text-7xl font-bold text-transparent text-stroke hover:text-white transition-colors duration-300 uppercase tracking-tighter"
+                                        className="font-syne text-3xl md:text-5xl font-bold text-transparent text-stroke hover:text-white transition-colors duration-300 uppercase tracking-tighter"
                                         data-text={link.name}
                                     >
                                         {link.name}
