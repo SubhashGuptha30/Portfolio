@@ -6,3 +6,4 @@ import { achievement } from './schemas/achievement'
 import { experience } from './schemas/experience'
 
 export const schemaTypes = [siteSettings, project, skill, certification, achievement, experience]
+
