@@ -39,6 +39,16 @@ const ProjectItem = ({ project, index, onSelect }: { project: Project; index: nu
                     <p className="text-white/60 max-w-xl text-lg font-light">
                         {project.shortDescription}
                     </p>
+                    {project.highlights && project.highlights.length > 0 && (
+                        <div className="flex flex-wrap gap-8 mt-8">
+                            {project.highlights.map((h) => (
+                                <div key={h.label}>
+                                    <p className="font-syne text-3xl font-bold text-white">{h.value}</p>
+                                    <p className="text-xs text-white/60 uppercase tracking-wider mt-1">{h.label}</p>
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
 
                 <div className="relative w-full md:w-[400px] aspect-video overflow-hidden rounded-lg cursor-pointer" onClick={() => onSelect(project)}>

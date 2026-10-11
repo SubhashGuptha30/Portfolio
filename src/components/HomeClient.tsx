@@ -3,11 +3,9 @@
 import { client } from '@/lib/sanity'
 
 import { useEffect, useState } from 'react'
-import { AnimatePresence } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
-import Loader from '@/components/Loader'
 import BackToTop from '@/components/BackToTop'
 import { fetchHomeData, type HomeData } from '@/lib/homeData'
 
@@ -23,17 +21,13 @@ import Contact from '@/components/Contact'
 // up without waiting for the next rebuild.
 export default function HomeClient({ initialData }: { initialData: HomeData }) {
   const [data, setData] = useState<HomeData>(initialData)
-  const [showLoader, setShowLoader] = useState(true)
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowLoader(false), 1200)
     fetchHomeData(client).then(setData).catch((error) => console.error('Error refreshing data:', error))
-    return () => clearTimeout(timer)
   }, [])
 
   return (
     <main className="bg-slate-950 min-h-screen text-slate-200 selection:bg-primary/30">
-      <AnimatePresence>{showLoader && <Loader key="loader" />}</AnimatePresence>
       <Navbar />
       <Hero data={data.siteSettings} />
       <About data={data.siteSettings} />

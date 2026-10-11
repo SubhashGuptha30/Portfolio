@@ -6,14 +6,14 @@ import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
-    { name: 'Home', href: '#hero' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Work', href: '#projects' },
-    { name: 'Achievements', href: '#achievements' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Certifications', href: '#certifications' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '#hero', desktop: false },
+    { name: 'About', href: '#about', desktop: true },
+    { name: 'Skills', href: '#skills', desktop: true },
+    { name: 'Work', href: '#projects', desktop: true },
+    { name: 'Achievements', href: '#achievements', desktop: true },
+    { name: 'Experience', href: '#experience', desktop: true },
+    { name: 'Certifications', href: '#certifications', desktop: false },
+    { name: 'Contact', href: '#contact', desktop: true },
 ]
 
 export default function Navbar() {
@@ -42,13 +42,36 @@ export default function Navbar() {
 
     return (
         <>
-            {/* Floating Toggle Button */}
+            {/* Desktop Navigation Bar */}
+            <header
+                className={`hidden md:block fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/70 backdrop-blur-md border-b border-white/10' : 'bg-transparent'}`}
+            >
+                <nav className="container mx-auto px-6 h-20 flex items-center justify-between">
+                    <Link href="#hero" className="font-syne text-lg font-bold text-white tracking-tight">
+                        Subhash Guptha
+                    </Link>
+                    <ul className="flex items-center gap-8">
+                        {navLinks.filter((link) => link.desktop).map((link) => (
+                            <li key={link.name}>
+                                <Link
+                                    href={link.href}
+                                    className="text-sm text-white/70 hover:text-white transition-colors"
+                                >
+                                    {link.name}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+            </header>
+
+            {/* Floating Toggle Button (mobile) */}
             <motion.button
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 1, duration: 0.5 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className={`fixed top-8 right-8 z-[60] w-16 h-16 rounded-full flex items-center justify-center transition-colors duration-300 mix-blend-difference ${isOpen ? 'bg-transparent text-white' : 'bg-white text-black hover:scale-110'
+                className={`md:hidden fixed top-6 right-6 z-[60] w-14 h-14 rounded-full flex items-center justify-center transition-colors duration-300 mix-blend-difference ${isOpen ? 'bg-transparent text-white' : 'bg-white text-black hover:scale-110'
                     }`}
                 aria-label="Toggle Menu"
             >
@@ -76,7 +99,7 @@ export default function Navbar() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center"
+                        className="md:hidden fixed inset-0 z-50 bg-black flex flex-col items-center justify-center"
                     >
                         <nav className="flex flex-col items-center gap-6">
                             {navLinks.map((link, index) => (

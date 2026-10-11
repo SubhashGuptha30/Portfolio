@@ -34,6 +34,20 @@ export const project = {
             type: 'text',
         },
         {
+            name: 'highlights',
+            title: 'Key Numbers',
+            description: 'Up to 3 short stats shown on the project card, e.g. 0.888 / AUROC',
+            type: 'array',
+            of: [{
+                type: 'object',
+                fields: [
+                    { name: 'value', title: 'Value', type: 'string' },
+                    { name: 'label', title: 'Label', type: 'string' },
+                ],
+            }],
+            validation: (Rule: any) => Rule.max(3),
+        },
+        {
             name: 'technologies',
             title: 'Technologies',
             type: 'array',

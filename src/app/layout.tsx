@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
-import CustomCursor from "@/components/CustomCursor";
 import { client, urlFor } from "@/lib/sanity";
 import { siteSettingsQuery } from "@/lib/queries";
 
@@ -115,11 +114,10 @@ export default async function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} antialiased lg:cursor-none`}
+        className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} antialiased`}
         suppressHydrationWarning
       >
         <SmoothScroll>
-          <CustomCursor />
           {children}
         </SmoothScroll>
       </body>

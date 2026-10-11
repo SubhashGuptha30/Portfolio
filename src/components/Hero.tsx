@@ -33,7 +33,7 @@ export default function Hero({ data }: HeroProps) {
     if (!data) return null
 
     return (
-        <section ref={containerRef} id="hero" className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-black">
+        <section ref={containerRef} id="hero" className="relative min-h-screen pt-24 pb-36 flex flex-col items-center justify-center overflow-hidden bg-black">
             {/* Background Image with Parallax */}
             {/* Background Image Removed - Moved to About Section */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
@@ -124,7 +124,7 @@ export default function Hero({ data }: HeroProps) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 1 }}
-                className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/60 flex flex-col items-center gap-2"
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 flex flex-col items-center gap-2"
             >
                 <span className="text-xs tracking-widest uppercase">Scroll</span>
                 <motion.div

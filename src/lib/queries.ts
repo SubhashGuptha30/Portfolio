@@ -25,6 +25,7 @@ export const projectsQuery = groq`
     shortDescription,
     longDescription,
     technologies,
+    highlights,
     demoUrl,
     codeUrl,
     thumbnailImage,

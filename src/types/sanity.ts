@@ -39,6 +39,7 @@ export interface Project {
     shortDescription: string;
     longDescription: string;
     technologies: string[];
+    highlights?: { value: string; label: string }[];
     demoUrl?: string;
     codeUrl?: string;
     thumbnailImage: SanityImage;
