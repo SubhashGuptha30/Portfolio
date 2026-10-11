@@ -1,7 +1,9 @@
 import { MetadataRoute } from 'next'
 
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://subhashguptha.com' // Replace with actual domain
+    const baseUrl = 'https://subhashguptha.online' // Replace with actual domain
 
     return [
         {

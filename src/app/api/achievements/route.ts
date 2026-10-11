@@ -3,6 +3,9 @@ import * as fs from 'fs';
 import * as path from 'path';
 import fallbackData from '@/data/achievements-fallback.json';
 
+// Static export: stats are fetched at build time; the scheduled Pages workflow rebuilds daily.
+export const dynamic = 'force-static';
+
 // ─── Cache Configuration ───────────────────────────────────────────────────────
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours
 const CACHE_FILE_PATH = '/tmp/achievements-cache.json';

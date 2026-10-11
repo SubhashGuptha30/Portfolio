@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next'
 
+export const dynamic = 'force-static'
+
 export default function robots(): MetadataRoute.Robots {
     return {
         rules: {
@@ -7,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/studio/', // Disallow Sanity Studio
         },
-        sitemap: 'https://subhashguptha.com/sitemap.xml', // Replace with actual domain
+        sitemap: 'https://subhashguptha.online/sitemap.xml', // Replace with actual domain
     }
 }
