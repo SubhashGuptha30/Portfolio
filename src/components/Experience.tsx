@@ -25,7 +25,7 @@ const ExperienceItem = ({ exp, index }: { exp: ExperienceType; index: number }) 
             <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
                 {/* Date Column */}
                 <div className="md:col-span-2 pt-2">
-                    <span className="text-white/40 font-mono text-sm tracking-wider">
+                    <span className="text-white/60 font-mono text-sm tracking-wider">
                         {new Date(exp.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })} — {exp.isCurrent ? 'Present' : (exp.endDate ? new Date(exp.endDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : '')}
                     </span>
                 </div>
@@ -33,7 +33,7 @@ const ExperienceItem = ({ exp, index }: { exp: ExperienceType; index: number }) 
                 {/* Main Content Column */}
                 <div className="md:col-span-10 flex flex-col md:flex-row justify-between gap-8">
                     <div className="flex flex-col gap-2">
-                        <h3 className="text-4xl md:text-6xl font-bold font-syne text-white/20 group-hover:text-white transition-colors duration-500">
+                        <h3 className="text-4xl md:text-6xl font-bold font-syne text-white/50 group-hover:text-white transition-colors duration-500">
                             {exp.organization}
                         </h3>
                         <span className="text-xl md:text-2xl font-medium text-white/60 group-hover:text-white/80 transition-colors duration-300">
@@ -47,7 +47,7 @@ const ExperienceItem = ({ exp, index }: { exp: ExperienceType; index: number }) 
                             animate={{ height: isHovered ? 'auto' : 0, opacity: isHovered ? 1 : 0 }}
                             className="overflow-hidden"
                         >
-                            <p className="text-white/40 text-sm leading-relaxed max-w-xs">
+                            <p className="text-white/60 text-sm leading-relaxed max-w-xs">
                                 {exp.description}
                             </p>
                         </motion.div>
@@ -72,7 +72,7 @@ export default function Experience({ experiences }: ExperienceProps) {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, margin: "-100px" }}
-                    className="font-syne text-sm font-bold text-white/40 uppercase tracking-widest mb-4"
+                    className="font-syne text-sm font-bold text-white/60 uppercase tracking-widest mb-4"
                 >
                     Experience
                 </motion.h2>

@@ -51,7 +51,7 @@ export default function About({ data }: AboutProps) {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: false, margin: "-100px" }}
-                            className="font-syne text-sm font-bold text-white/40 uppercase tracking-widest mb-8"
+                            className="font-syne text-sm font-bold text-white/60 uppercase tracking-widest mb-8"
                         >
                             About Me
                         </motion.h2>
@@ -74,7 +74,7 @@ export default function About({ data }: AboutProps) {
                                 <div>
                                     <h4 className="text-white font-bold mb-2">Education</h4>
                                     <p className="text-white/60 text-sm">BTech CSE–AI</p>
-                                    <p className="text-white/40 text-sm">Amrita Vishwa Vidyapeetham</p>
+                                    <p className="text-white/60 text-sm">Amrita Vishwa Vidyapeetham</p>
                                 </div>
                                 <div>
                                     <h4 className="text-white font-bold mb-2">Interests</h4>

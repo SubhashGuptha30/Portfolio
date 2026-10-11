@@ -51,10 +51,11 @@ export async function generateMetadata(): Promise<Metadata> {
   const title = settings?.seoTitle || settings?.name || "Portfolio";
   const description = settings?.seoDescription || settings?.heroSummary || "Full Stack Developer Portfolio";
   const keywords = settings?.seoKeywords || ["Portfolio", "Developer", "Full Stack", "React", "Next.js"];
-  const ogImage = settings?.ogImage ? urlFor(settings.ogImage).width(1200).height(630).url() : "/og-image.jpg";
+  const ogSource = settings?.ogImage || settings?.heroImage;
+  const ogImage = ogSource ? urlFor(ogSource).width(1200).height(630).url() : undefined;
 
   return {
-    metadataBase: new URL('https://subhashguptha.com'),
+    metadataBase: new URL('https://subhashguptha.online'),
     title,
     description,
     keywords,
@@ -62,21 +63,21 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       type: "website",
-      url: "https://subhashguptha.com", // Replace with actual URL if known, or make dynamic
-      images: [
+      url: "https://subhashguptha.online",
+      images: ogImage ? [
         {
           url: ogImage,
           width: 1200,
           height: 630,
           alt: title,
         },
-      ],
+      ] : undefined,
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [ogImage],
+      images: ogImage ? [ogImage] : undefined,
     },
     icons: {
       icon: "/favicon.svg",
@@ -95,7 +96,7 @@ export default async function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     "name": settings?.name || "Subhash Guptha",
-    "url": "https://subhashguptha.com", // Replace with actual URL
+    "url": "https://subhashguptha.online",
     "sameAs": [
       settings?.socialLinks?.github,
       settings?.socialLinks?.linkedin,

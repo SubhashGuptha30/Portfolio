@@ -4,6 +4,12 @@ export const project = {
     type: 'document',
     fields: [
         {
+            name: 'order',
+            title: 'Display Order',
+            description: 'Lower numbers appear first',
+            type: 'number',
+        },
+        {
             name: 'title',
             title: 'Title',
             type: 'string',

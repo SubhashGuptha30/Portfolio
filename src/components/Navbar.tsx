@@ -103,7 +103,7 @@ export default function Navbar() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.5 }}
-                            className="absolute bottom-12 text-white/40 text-sm tracking-widest uppercase"
+                            className="absolute bottom-12 text-white/60 text-sm tracking-widest uppercase"
                         >
                             Subhash Guptha © {new Date().getFullYear()}
                         </motion.div>

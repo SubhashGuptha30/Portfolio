@@ -31,7 +31,7 @@ const ProjectItem = ({ project, index, onSelect }: { project: Project; index: nu
                     </h3>
                     <div className="flex flex-wrap gap-2 mb-6">
                         {project.technologies?.map((tech) => (
-                            <span key={tech} className="text-sm text-white/40 uppercase tracking-wider">
+                            <span key={tech} className="text-sm text-white/60 uppercase tracking-wider">
                                 {tech}
                             </span>
                         ))}
@@ -91,7 +91,7 @@ export default function Projects({ projects }: ProjectsProps) {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: false, margin: "-100px" }}
-                    className="font-syne text-sm font-bold text-white/40 uppercase tracking-widest mb-4"
+                    className="font-syne text-sm font-bold text-white/60 uppercase tracking-widest mb-4"
                 >
                     Project Works
                 </motion.h2>
@@ -134,7 +134,7 @@ export default function Projects({ projects }: ProjectsProps) {
                                     </h3>
                                     <div className="flex flex-wrap gap-2">
                                         {selectedProject.technologies?.map((tech) => (
-                                            <span key={tech} className="text-xs text-white/40 border border-white/10 px-2 py-1 rounded-full uppercase tracking-wider">
+                                            <span key={tech} className="text-xs text-white/60 border border-white/10 px-2 py-1 rounded-full uppercase tracking-wider">
                                                 {tech}
                                             </span>
                                         ))}

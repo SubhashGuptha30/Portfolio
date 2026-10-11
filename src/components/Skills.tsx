@@ -41,7 +41,7 @@ export default function Skills({ skills }: SkillsProps) {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: false, margin: "-100px" }}
                             onViewportLeave={() => setActiveCategory(null)}
-                            className="font-syne text-sm font-bold text-white/40 uppercase tracking-widest mb-8"
+                            className="font-syne text-sm font-bold text-white/60 uppercase tracking-widest mb-8"
                         >
                             Expertise
                         </motion.h2>
@@ -85,7 +85,7 @@ export default function Skills({ skills }: SkillsProps) {
                                             }}
                                             onMouseLeave={() => setHoveredCategory(null)}
                                             className={`text-3xl md:text-5xl font-bold uppercase font-syne transition-all duration-500 text-left w-full flex items-center justify-between
-                                            ${isActive ? 'text-white translate-x-4' : 'text-white/20 hover:text-white/60'}
+                                            ${isActive ? 'text-white translate-x-4' : 'text-white/50 hover:text-white/60'}
                                         `}
                                         >
                                             {category}
@@ -189,7 +189,7 @@ export default function Skills({ skills }: SkillsProps) {
                                                 hidden: { opacity: 0, y: 20, filter: 'blur(10px)' },
                                                 visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
                                             }}
-                                            className="block text-white/40"
+                                            className="block text-white/60"
                                         >
                                             Technical Arsenal
                                         </motion.span>

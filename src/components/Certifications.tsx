@@ -25,7 +25,7 @@ export default function Certifications({ certifications }: CertificationsProps) 
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: false, margin: "-100px" }}
-                            className="font-syne text-sm font-bold text-white/40 uppercase tracking-widest mb-4"
+                            className="font-syne text-sm font-bold text-white/60 uppercase tracking-widest mb-4"
                         >
                             Certifications
                         </motion.h2>
@@ -64,7 +64,7 @@ export default function Certifications({ certifications }: CertificationsProps) 
                                 <h3 className="text-2xl font-bold text-white mb-3 font-syne leading-tight group-hover:text-white/90 transition-colors">
                                     {cert.title}
                                 </h3>
-                                <div className="flex items-center justify-between text-white/40 text-sm font-mono">
+                                <div className="flex items-center justify-between text-white/60 text-sm font-mono">
                                     <span>{cert.provider}</span>
                                     <span>{new Date(cert.issueDate).getFullYear()}</span>
                                 </div>
@@ -95,7 +95,7 @@ export default function Certifications({ certifications }: CertificationsProps) 
                             <div className="flex justify-between items-start p-6 border-b border-white/5">
                                 <div>
                                     <h3 className="text-2xl font-bold text-white font-syne mb-1">{selectedCert.title}</h3>
-                                    <p className="text-white/40 font-mono text-sm">{selectedCert.provider} • {new Date(selectedCert.issueDate).getFullYear()}</p>
+                                    <p className="text-white/60 font-mono text-sm">{selectedCert.provider} • {new Date(selectedCert.issueDate).getFullYear()}</p>
                                 </div>
                                 <button
                                     onClick={() => setSelectedCert(null)}

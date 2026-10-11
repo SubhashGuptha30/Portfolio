@@ -18,7 +18,7 @@ export const siteSettingsQuery = groq`
 `
 
 export const projectsQuery = groq`
-  *[_type == "project"] | order(_createdAt desc) {
+  *[_type == "project"] | order(coalesce(order, 999) asc, _createdAt desc) {
     _id,
     title,
     slug,
